@@ -14,7 +14,7 @@ class Db
             $this->dbh = new PDO($this->dsn, $database['username'], $database['password']);
             $this->dbh->exec('SET character_set_connection=' . $database['charset'] . ', character_set_results=' . $database['charset'] . ', character_set_client=binary');
         } catch (PDOException $e) {
-            $this->outputError($e->getMessage());
+            die($e->getMessage());
         }
 
     }
